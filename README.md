@@ -1,2 +1,2 @@
 # AoC-PRA
-Grupo formado por Jorge Izquierdo y Angel Palacios
+Grupo formado por Jorge Izquierdo y Àngel Palacios
