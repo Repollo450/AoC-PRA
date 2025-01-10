@@ -1,0 +1,19 @@
+Lectura del archivo
+
+Se utilizó la clase std::ifstream para abrir y leer el archivo línea por línea. Este método permite procesar cada línea de manera independiente, lo que facilita el análisis. Además, se implementó un manejo de errores para verificar si el archivo existe y se puede abrir correctamente, asegurando que el programa no falle inesperadamente.
+Procesamiento de los números
+
+Cada línea se convirtió en un flujo utilizando std::istringstream, lo que permitió extraer números enteros de forma individual y almacenarlos en un vector dinámico (std::vector<int>). Esto resulta práctico para gestionar secuencias de números cuya longitud varía de una línea a otra.
+Verificación de las condiciones
+
+La lógica para determinar si una línea es segura se encapsuló en la función es_segura. Esta función evalúa dos aspectos:
+
+    1.Las diferencias entre números consecutivos deben estar dentro de un rango permitido.
+    2.La secuencia debe mantener un patrón consistente (ascendente o descendente).
+    Esto se logró recorriendo el vector con un bucle y aplicando condiciones para validar los criterios.
+
+Organización del código
+
+El programa se estructuró en funciones separadas para mejorar la claridad y la reutilización del código. Este enfoque modular también facilita realizar futuros ajustes.
+
+El resultado es un programa funcional y bien organizado que cumple con los objetivos planteados.
