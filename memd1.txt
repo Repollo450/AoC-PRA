@@ -1,0 +1,15 @@
+Memoria de desarrollo del código
+
+Lectura de datos  
+Para procesar el archivo, implementé una función que utiliza `fopen` y `fscanf` para leer pares de números enteros. Estos datos se almacenan en dos vectores separados, garantizando una estructura clara para su posterior manipulación. Además, incluí verificaciones para gestionar errores, como la imposibilidad de abrir el archivo, lo que asegura que el programa sea más robusto.  
+
+Ordenación de datos  
+La ordenación de los vectores se realiza mediante un algoritmo conocido como **Bubble Sort**. Aunque no es el algoritmo más eficiente, es intuitivo y adecuado para conjuntos pequeños. Opté por usar `swap` para simplificar el intercambio de elementos, mejorando la legibilidad del código.  
+
+Cálculo de diferencias absolutas  
+La suma de diferencias absolutas se implementó recorriendo ambos vectores en paralelo y calculando, para cada posición, la diferencia entre los elementos correspondientes. Este cálculo se realiza de forma directa y eficiente mediante un bucle, asegurando que los resultados sean precisos.  
+
+Organización del código  
+Estructuré el programa en funciones separadas, cada una con una responsabilidad específica. Esto no solo facilita su mantenimiento, sino que también hace que el código sea más legible y adaptable a futuros cambios.  
+
+En resumen, este programa combina simplicidad y claridad, cumpliendo los objetivos de forma eficiente.
