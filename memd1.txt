@@ -1,15 +1,14 @@
-Memoria de desarrollo del código
+Lectura y manejo de archivos
+Se utiliza ifstream para abrir y leer el archivo línea por línea. Los datos extraídos se dividen en dos listas utilizando sscanf. Este enfoque asegura que cada par de números se almacene correctamente en arreglos dinámicos adaptados al tamaño del archivo.
 
-Lectura de datos  
-Para procesar el archivo, implementé una función que utiliza `fopen` y `fscanf` para leer pares de números enteros. Estos datos se almacenan en dos vectores separados, garantizando una estructura clara para su posterior manipulación. Además, incluí verificaciones para gestionar errores, como la imposibilidad de abrir el archivo, lo que asegura que el programa sea más robusto.  
+Uso de arreglos dinámicos
+Se emplean arreglos asignados en tiempo de ejecución con new, lo que permite manejar eficientemente datos de tamaño variable. Al final, se libera la memoria con delete[] para evitar fugas.
 
-Ordenación de datos  
-La ordenación de los vectores se realiza mediante un algoritmo conocido como **Bubble Sort**. Aunque no es el algoritmo más eficiente, es intuitivo y adecuado para conjuntos pequeños. Opté por usar `swap` para simplificar el intercambio de elementos, mejorando la legibilidad del código.  
+Ordenamiento basado en Divide y Vencerás
+El programa usa un algoritmo de Divide y Vencerás (Insertion Sort): los números se procesan dividiendo la lista en una parte ordenada y otra desordenada. La lista se ordena integrando elementos uno por uno en la parte ordenada. Este enfoque, aunque menos eficiente que algoritmos avanzados, es simple y funcional para datos pequeños.
 
-Cálculo de diferencias absolutas  
-La suma de diferencias absolutas se implementó recorriendo ambos vectores en paralelo y calculando, para cada posición, la diferencia entre los elementos correspondientes. Este cálculo se realiza de forma directa y eficiente mediante un bucle, asegurando que los resultados sean precisos.  
+Cálculo de diferencias absolutas
+La diferencia absoluta entre los valores correspondientes de las dos listas se calcula directamente con abs(), y la suma se acumula de forma iterativa.
 
-Organización del código  
-Estructuré el programa en funciones separadas, cada una con una responsabilidad específica. Esto no solo facilita su mantenimiento, sino que también hace que el código sea más legible y adaptable a futuros cambios.  
-
-En resumen, este programa combina simplicidad y claridad, cumpliendo los objetivos de forma eficiente.
+Estructura modular
+El programa organiza su funcionalidad en funciones independientes, como la de ordenamiento y lectura de datos, mejorando la claridad y permitiendo su fácil modificación.
