@@ -1,58 +1,70 @@
 #include <iostream>
-#include <vector>
-#include <cstdlib>
-#include <cstdio>
-
-std::vector<int> listaIzquierda = {0};
-std::vector<int> listaDerecha = {0};
-
+#include <fstream>
+#include <string>
 using namespace std;
 
-void cargarArchivo(const char* rutaArchivo) {
-    FILE* archivo = fopen(rutaArchivo, "r");
-    if (!archivo) {
-        cerr << "Error: No se pudo abrir el archivo.\n";
-        exit(EXIT_FAILURE);
-    }
-    int valor1, valor2;
-    while (fscanf(archivo, "%d %d", &valor1, &valor2) != EOF) {
-        listaIzquierda.push_back(valor1);
-        listaDerecha.push_back(valor2);
-    }
-    fclose(archivo);
-}
+// Implementación del ordenamiento por inserción
+void ordenarPorInsercion(int* datos, int longitud) {
+    for (int i = 1; i < longitud; i++) { // Iterar desde el segundo elemento
+        int elementoActual = datos[i]; // Almacenar el elemento actual
+        int posicion = i - 1; // Índice para comparación
 
-void ordenarVector(vector<int>& vector) {
-    int tamano = vector.size();
-    for (int i = 0; i < tamano - 1; ++i) {
-        for (int j = 0; j < tamano - i - 1; ++j) {
-            if (vector[j] > vector[j + 1]) {
-                swap(vector[j], vector[j + 1]);
-            }
+        // Desplazar elementos mayores hacia adelante
+        while (posicion >= 0 && datos[posicion] > elementoActual) {
+            datos[posicion + 1] = datos[posicion];
+            posicion--;
         }
+
+        // Insertar el elemento en su lugar adecuado
+        datos[posicion + 1] = elementoActual;
     }
 }
 
-unsigned long long calcularSumaDeDiferencias(const vector<int>& vectorA, const vector<int>& vectorB) {
-    unsigned long long sumaDiferencias = 0;
-    int tamano = vectorA.size();
-    for (int i = 0; i < tamano; ++i) {
-        sumaDiferencias += abs(vectorA[i] - vectorB[i]);
-    }
-    return sumaDiferencias;
-}
+int main() {
+    ifstream archivoEntrada("input.txt");
+    string lineaLeida;
 
-int main(int argc, char* argv[]) {
-    if (argc != 2) {
-        cerr << "Uso: " << argv[0] << " <ruta_archivo>\n";
-        return EXIT_FAILURE;
+    int totalLineas = 0;
+
+    // Contar el número de líneas en el archivo
+    while (getline(archivoEntrada, lineaLeida)) {
+        totalLineas++;
     }
 
-    const char* rutaArchivo = argv[1];
-    cargarArchivo(rutaArchivo);
-    ordenarVector(listaIzquierda);
-    ordenarVector(listaDerecha);
-    cout << calcularSumaDeDiferencias(listaIzquierda, listaDerecha) << endl;
+    archivoEntrada.close();
+    archivoEntrada.open("input.txt");
+
+    // Crear arreglos dinámicos para almacenar los números
+    int* listaPrimaria = new int[totalLineas];
+    int* listaSecundaria = new int[totalLineas];
+
+    int contador = 0;
+    while (getline(archivoEntrada, lineaLeida)) {
+        int numeroA, numeroB;
+        sscanf(lineaLeida.c_str(), "%d %d", &numeroA, &numeroB);
+        listaPrimaria[contador] = numeroA;
+        listaSecundaria[contador] = numeroB;
+        contador++;
+    }
+
+    archivoEntrada.close();
+
+    // Ordenar ambos arreglos
+    ordenarPorInsercion(listaPrimaria, totalLineas);
+    ordenarPorInsercion(listaSecundaria, totalLineas);
+
+    // Calcular la suma de diferencias absolutas
+    int sumaDiferencias = 0;
+    for (int i = 0; i < totalLineas; i++) {
+        int diferenciaAbsoluta = abs(listaPrimaria[i] - listaSecundaria[i]);
+        sumaDiferencias += diferenciaAbsoluta;
+    }
+
+    cout << "Suma total de diferencias: " << sumaDiferencias << endl;
+
+    // Liberar la memoria dinámica
+    delete[] listaPrimaria;
+    delete[] listaSecundaria;
 
     return 0;
 }
