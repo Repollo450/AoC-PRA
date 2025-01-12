@@ -17,15 +17,6 @@ inline int hash(const std::string& key) {
     return h;
 }
 
-// Función para imprimir la tabla hash
-void print(const unordered_set<string>& patronesSet) {
-    cout << "Tabla Hash:\n";
-    for (const auto& pattern : patronesSet) {
-        cout << pattern << " ";
-    }
-    cout << endl;
-}
-
 // Inserta un patrón en la tabla hash
 void insert(const std::string& pattern, unordered_set<string>& patronesSet) {
     patronesSet.insert(pattern);
@@ -33,7 +24,7 @@ void insert(const std::string& pattern, unordered_set<string>& patronesSet) {
 
 // Función para leer patrones y diseños desde un archivo
 void leerdata(vector<string>& patrones, vector<string>& disenos) {
-    ifstream file("input.txt");
+    ifstream file("input19.txt");
     string line;
     bool lecturaPatrones = true;
 
@@ -47,7 +38,7 @@ void leerdata(vector<string>& patrones, vector<string>& disenos) {
             stringstream ss(line);
             string patron;
             while (getline(ss, patron, ',')) {
-                patron.erase(0, patron.find_first_not_of(" \t\n\r\f\v")); // strip
+                patron.erase(0, patron.find_first_not_of(" \t\n\r\f\v")); 
                 patrones.push_back(patron);
             }
         } else {
@@ -91,10 +82,6 @@ int main() {
         insert(pattern, patronesSet);
     }
 
-#ifdef DEBUG
-    print(patronesSet); // Imprimir la tabla hash para depuración
-#endif
-
     for (const auto& diseno : disenos) {
         vector<int> mem(diseno.size() + 1, -1);
         if (comprobarPatrones(diseno, patronesSet, mem)) {
@@ -102,6 +89,6 @@ int main() {
         }
     }
 
-    cout << "Número total de combinaciones de patrones: " << sum << endl;
+    cout << "Número total de diseños: " << sum << endl;
     return 0;
 }
