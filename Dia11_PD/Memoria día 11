@@ -1,0 +1,18 @@
+MEMORIA DEL PROBLEMA
+
+JUSTIFICACIÓN DEL PROBLEMA:
+El problema analiza la evolución de una serie de piedras con reglas de transformación específicas al aplicar una acción repetida (parpadeos). Es ideal para técnicas como programación dinámica y divide y vencerás porque permite descomponer el problema en subproblemas relacionados y almacenar soluciones intermedias, optimizando los cálculos.
+
+DESCRIPCIÓN TÉCNICA:
+La solución utiliza programación dinámica combinada con divide y vencerás para modelar las transformaciones de las piedras. 
+Aborda la simulación de transformaciones aplicando reglas predefinidas de manera iterativa o recursiva. 
+Se optimizan los cálculos utilizando programación dinámica para evitar el procesamiento repetido de estados previamente calculados. 
+Las transformaciones de las piedras se implementan de forma genérica para manejar cualquier conjunto de entradas y reglas, garantizando que el algoritmo sea escalable y eficiente. 
+Finalmente, se procesa cada piedra de forma independiente y los resultados se combinan para obtener el total tras el número especificado de parpadeos.
+
+ALTERNATIVAS CONSIDERADAS:
+Se exploró la posibilidad de una solución iterativa pura, pero se descartó debido al costo computacional de repetir los cálculos para cada estado sin aprovechar resultados intermedios. El enfoque recursivo con programación dinámica resultó ser más eficiente y escalable.
+
+VALORACIÓN PERSONAL:
+Resolver este problema permitió profundizar en el uso de técnicas avanzadas como la programación dinámica y el enfoque de divide y vencerás. Además, se destacó la importancia de optimizar soluciones para problemas recursivos complejos al evitar redundancias mediante el almacenamiento de resultados intermedios.
+
