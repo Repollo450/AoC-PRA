@@ -1,0 +1,17 @@
+MEMORIA DEL PROBLEMA
+
+JUSTIFICACIÓN DEL PROBLEMA:
+El problema consiste en verificar el orden correcto de las páginas en varias actualizaciones, cumpliendo reglas de precedencia definidas. Los grafos fueron la estructura elegida porque permiten modelar relaciones de dependencia entre elementos, siendo ideales para representar reglas como "X debe preceder a Y".
+
+DESCRIPCIÓN TÉCNICA:
+Los grafos se utilizan para representar relaciones entre elementos, especialmente cuando dichas relaciones son direccionales, como en este caso donde una página debe preceder a otra. En este problema, el grafo dirigido permite:
+
+Modelar dependencias entre las páginas, donde cada nodo representa una página y cada arista indica una regla de precedencia.
+
+Validar ordenaciones comprobando que las actualizaciones respetan las reglas de precedencia definidas en el grafo.
+
+ALTERNATIVAS CONSIDERADAS:
+Se consideró usar ordenación topológica para validar las actualizaciones, pero se descartó debido a la complejidad adicional que introducía sin necesidad en este contexto.
+
+VALORACIÓN PERSONAL:
+La resolución del problema permitió profundizar en el uso de grafos para modelar dependencias y validar relaciones. Aprendimos a optimizar recorridos, gestionar datos incompletos y a identificar patrones eficientes para validar ordenaciones complejas. Además, mejoramos nuestra comprensión de estructuras dirigidas y su aplicación en problemas.
