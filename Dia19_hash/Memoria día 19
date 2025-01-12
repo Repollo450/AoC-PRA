@@ -4,7 +4,7 @@ JUSTIFICACIÓN DEL PROBLEMA:
 El problema plantea la verificación de si una serie de diseños puede formarse utilizando patrones de toallas disponibles. Este tipo de problema es ideal para ser resuelto con tablas hash debido a la necesidad de realizar búsquedas rápidas y verificar coincidencias de prefijos, asegurando un rendimiento eficiente.
 
 DESCRIPCIÓN TÉCNICA:
-La solución se centra en utilizar una tabla hash para almacenar los patrones disponibles y una función recursiva con memoización para verificar si un diseño puede formarse. Los pasos principales incluyen:
+La solución se centra en utilizar una tabla hash para almacenar los patrones disponibles y una función recursiva con memorización para verificar si un diseño puede formarse. Los pasos principales incluyen:
 
 Almacenamiento de patrones: Los patrones se insertan en una tabla hash, permitiendo búsquedas en tiempo constante.
 
@@ -13,8 +13,8 @@ Verificación de diseños: Para cada diseño, se verifica si puede descomponerse
 Cálculo final: Se recorre la lista de diseños y se cuenta cuántos de ellos pueden formarse con los patrones dados.
 
 ALTERNATIVAS CONSIDERADAS:
-Se evaluó el uso de algoritmos puramente iterativos para generar todas las combinaciones posibles de patrones, pero este enfoque fue descartado debido a su complejidad exponencial. La combinación de tablas hash y memoización resultó ser mucho más eficiente.
+Se evaluó el uso de algoritmos puramente iterativos para generar todas las combinaciones posibles de patrones, pero este enfoque fue descartado debido a su complejidad exponencial. La combinación de tablas hash y memorización resultó ser mucho más eficiente.
 
 VALORACIÓN PERSONAL:
-Este problema ayudó a consolidar el conocimiento sobre el uso de tablas hash para optimizar búsquedas y la importancia de la memoización en problemas que involucran subproblemas superpuestos. Además, permitió aplicar técnicas de diseño algorítmico para resolver un caso práctico de verificación de patrones.
+Este problema ayudó a consolidar el conocimiento sobre el uso de tablas hash para optimizar búsquedas y la importancia de la programación dinámica en problemas que involucran subproblemas superpuestos. Además, permitió aplicar técnicas de diseño algorítmico para resolver un caso práctico de verificación de patrones.
 
