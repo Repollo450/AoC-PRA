@@ -1,0 +1,23 @@
+Proceso General
+
+    Lectura del Archivo:
+    El programa lee un archivo línea por línea en busca de operaciones del tipo mul(a, b).
+    Una vez localizada, la operación se analiza para extraer los dos números.
+
+    Validación y Cálculo:
+    Se verifica que los datos extraídos son válidos (enteros dentro de rango). Si es así, se calcula el producto a * b.
+
+    Almacenamiento en el Árbol:
+    El resultado del producto se inserta en el ABB. Si el árbol está vacío, se crea el nodo raíz; en caso contrario, el valor se coloca en la posición adecuada según las reglas del árbol.
+
+    Suma de Resultados:
+    Finalmente, se recorre el árbol completo y se suman los valores de cada nodo, obteniendo el total acumulado.
+
+Ventajas del Enfoque
+
+El uso de un ABB facilita:
+
+    Organización automática de los datos.
+    Eficiencia en operaciones como inserción y recorrido.
+
+El programa incluye controles de error para gestionar datos inválidos y excepciones al procesar los números, mejorando su estabilidad. Este diseño muestra cómo los árboles binarios son útiles para resolver problemas que requieren almacenar y operar sobre datos jerárquicamente.
